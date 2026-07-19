@@ -1,0 +1,51 @@
+# =====================================================================
+# p53 hotspot-vs-stability project — MASTER CONFIG
+# Every setting lives here. Change a value, re-run the scripts. Nothing
+# else needs editing. Lines starting with '#' are comments (ignored).
+# =====================================================================
+
+protein:
+  name: human_p53_DNA_binding_domain
+  region_start: 93        # first residue number of the region we care about
+  region_end:   290       # last  residue number of the region we care about
+
+structure:
+  repaired_pdb: structure/tp53_repaired.pdb   # your FoldX-repaired file
+  chain: A                # protein chain to use; CONFIRMED in step B1
+
+foldx:
+  # FoldX is a Linux binary run through WSL (Windows Subsystem for Linux).
+  # Paths below are WSL paths (/mnt/d/... is how WSL sees the D: drive).
+  run_via: wsl
+  binary_wsl: "/mnt/d/data D/Downloads D/foldx_Linux/foldx_20261231"
+  workdir_wsl: "/mnt/d/data D/Downloads D/foldx_Linux"   # holds rotabase.txt
+
+cutoffs:
+  # --- experimental stability (Road A) ---
+  # ddG = change in folding free energy on mutation, in kcal/mol.
+  #
+  # !!! IMPORTANT SIGN CONVENTION !!!
+  # We use ThermoMutDB ddG values EXACTLY AS DOWNLOADED (no editing the data).
+  # In ThermoMutDB, NEGATIVE ddG = mutation makes the protein LESS stable
+  # (destabilising). This is the OPPOSITE of the +ve=destabilising convention,
+  # confirmed against famous p53 mutations (R175H, Y220C, V143A are all negative).
+  # So the cutoffs below point "downward":
+  ddg_deleterious_below:  -1.0   # ddG <  -1.0  -> label "deleterious" (destabilising)
+  ddg_stabilising_above:   1.0   # ddG >  +1.0  -> label "stabilising"
+                                 # anything in between -> label "neutral"
+
+  # --- 3D patch building (Road B) ---
+  patch_distance_angstrom: 8.0   # two residues are "neighbours" if their closest
+                                 # heavy atoms are within this distance (Angstrom)
+  ala_hotspot_ddg: 2.0           # alanine-scan hotspot cutoff (kcal/mol), chosen in B5
+                                 # residues with AlaScan ddG >= this are hotspot candidates
+
+sasa:
+  # --- confounder check (step M5) ---
+  buried_cutoff_relative: 0.20   # relative solvent accessibility below this = "buried"
+
+paths:
+  data_dir:    data
+  structure_dir: structure
+  results_dir: results
+  scripts_dir: scripts
