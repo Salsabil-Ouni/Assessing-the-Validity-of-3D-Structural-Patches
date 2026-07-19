@@ -1,4 +1,4 @@
-# TP53 microenvironment-vs-stability project — what to tell the supervisor
+# TP53 microenvironment-vs-stability project 
 
 **Hypothesis tested:** the structural impact of a variant is determined by the 3D
 microenvironment (hotspot patch) to which it belongs. Operationalised as two questions:
@@ -29,7 +29,7 @@ and only joined at the statistics stage. All cut-offs live in one `config.yaml`.
 - **Selected 2OCJ** — wild-type, DNA-free (apo), complete & gap-free over the region, structural
   zinc present, 2.05 Å. Rejected 1UOL (stabilising mutant — would bias a stability study),
   4HJE/1TUP (DNA-bound — DNA distorts loops), 2FEJ (NMR), 2XWR (non-standard construct).
-- The supervisor's provided FoldX-repaired file **matches 2OCJ**, so prioritisation confirmed it.
+- The FoldX-repaired file **matches 2OCJ**, so prioritisation confirmed it.
 
 ## 3. Structure QC & cleaning
 - Chain check: chain A is **continuous, residues 96–289, no internal gaps** (only the disordered
@@ -40,7 +40,7 @@ and only joined at the statistics stage. All cut-offs live in one `config.yaml`.
   on a single **chain A + its zinc** extract, so the analysis is internally consistent.
 
 ## 4. Repair / refinement
-- The structure was already **FoldX-repaired** (RepairPDB) by the supervisor; we used it as-is
+- The structure was already **FoldX-repaired** (RepairPDB); we used it as-is
   (no re-repair, no MODELLER needed — no missing internal atoms).
 
 ## 5. Alanine scan & hotspot definition
@@ -127,12 +127,12 @@ DNA-binding/expression):
 - The functional extension answers a **different** question (function ≠ folding stability).
 - FoldX predictions only moderately track experiment (ρ ≈ 0.5); not a substitute for measurements.
 
-## Open questions for the supervisor
+## Open questions 
 1. Should "impact" mean **folding stability** (n = 37) or **functional impact** (n = 175–194)?
 2. Is the **beyond-burial** question worth pursuing further, or do we write up what we have?
 
 ## Deliverables
-Main: `REPORT_consistent.md`, `SUPERVISOR_SUMMARY.md`, `METHODS_LOG.md`.
+Main: `REPORT_consistent.md`, `SUMMARY.md`, `METHODS_LOG.md`.
 Data: `structure_candidates.csv`, `listA_variants.csv`, `residue_table_cA.csv`,
 `patches_3D_cA.csv`, `patches_3D_tight_3A.csv`, `functional_ext/results/replication_table.csv`.
 Figures: alanine-scan profile, 3D patch, Q2 scatter, predicted-vs-experimental validation,
