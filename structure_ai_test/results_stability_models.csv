@@ -1,0 +1,9 @@
+features,LOO_spearman,LOO_AUC
+R0 burial + own + patch,0.493,0.795
+M_ctx alone,0.772,0.813
+R1 R0 + M_ctx,0.676,0.796
+R0 + ESM-2,0.61,0.846
+R0 + AlphaMissense,0.709,0.924
+R0 + ESM-2 + M_ctx,0.699,0.843
+R0 + AlphaMissense + M_ctx,0.757,0.883
+R0 + M_bb,0.631,0.796

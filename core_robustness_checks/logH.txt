@@ -1,0 +1,17 @@
+
+=== hotspot vs non-hotspot (g_i >= 2 kcal/mol): n=64 vs n=130 ===
+  hydro    mean(group1)=+1.012  mean(group2)=-1.245  Mann-Whitney p=1.248e-07  AUC=0.733
+  volume   mean(group1)=+136.181  mean(group2)=+130.250  Mann-Whitney p=0.1644  AUC=0.561
+  charge   mean(group1)=+0.078  mean(group2)=+0.277  Mann-Whitney p=0.001479  AUC=0.401
+  burial   mean(group1)=+0.884  mean(group2)=+0.649  Mann-Whitney p=1.2e-12  AUC=0.814
+
+=== in-patch vs outside-the-patch (spatially clustered hotspots only): n=63 vs n=131 ===
+  hydro    mean(group1)=+1.035  mean(group2)=-1.238  Mann-Whitney p=1.675e-07  AUC=0.731
+  volume   mean(group1)=+137.389  mean(group2)=+129.715  Mann-Whitney p=0.1003  AUC=0.573
+  charge   mean(group1)=+0.079  mean(group2)=+0.275  Mann-Whitney p=0.001856  AUC=0.402
+  burial   mean(group1)=+0.896  mean(group2)=+0.645  Mann-Whitney p=1.385e-13  AUC=0.828
+
+=== amino-acid composition, hotspot vs non-hotspot ===
+chi-square test of composition difference: chi2=92.97, p=9.824e-12, df=19
+
+saved resultsH_hotspot_composition.csv, resultsH_composition_by_residue.csv, resultsH_composition_chisq.csv

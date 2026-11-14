@@ -1,0 +1,15 @@
+Kotler: 191 distinct positions with a parseable wild-type residue
+ offset  n_checked  n_match  pct_match
+    100        191       21       11.0
+    -14        177       18       10.2
+     76        191       19        9.9
+    -86        105       10        9.5
+     80        191       18        9.4
+     48        191       18        9.4
+     41        191       18        9.4
+     30        191       18        9.4
+      9        191       17        8.9
+     26        191       17        8.9
+
+Best offset: +100, 11.0% concordance (threshold used to retain a dataset elsewhere: >95%).
+At offset 0 (as originally checked): 7.3%

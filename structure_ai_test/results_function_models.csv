@@ -1,0 +1,19 @@
+dataset,features,oof_spearman,n_rows,n_residues
+Giacomelli 2018,K0 classical (C+B+O+P),0.5414,3325,175
+Giacomelli 2018,K1 K0 + M_ctx,0.5636,3325,175
+Giacomelli 2018,K2 K0 + ESM-2,0.6298,3325,175
+Giacomelli 2018,K3 K2 + M_ctx,0.6298,3325,175
+Giacomelli 2018,K4 K2 + AlphaMissense,0.6556,3325,175
+Giacomelli 2018,K5 K4 + M_ctx,0.6625,3325,175
+Giacomelli 2018,K6 K0 + M_bb,0.5654,3325,175
+Giacomelli 2018,K1e K0 + M_ctx (ensemble of noise levels),0.5671,3325,175
+Giacomelli 2018,K1x K0 + M_ctx (2XWR structure),0.5599,3325,175
+Kato 2003,K0 classical (C+B+O+P),0.5015,1147,194
+Kato 2003,K1 K0 + M_ctx,0.5361,1147,194
+Kato 2003,K2 K0 + ESM-2,0.6466,1147,194
+Kato 2003,K3 K2 + M_ctx,0.663,1147,194
+Kato 2003,K4 K2 + AlphaMissense,0.7226,1147,194
+Kato 2003,K5 K4 + M_ctx,0.732,1147,194
+Kato 2003,K6 K0 + M_bb,0.5446,1147,194
+Kato 2003,K1e K0 + M_ctx (ensemble of noise levels),0.5436,1147,194
+Kato 2003,K1x K0 + M_ctx (2XWR structure),0.5314,1147,194

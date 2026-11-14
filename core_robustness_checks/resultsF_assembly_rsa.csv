@@ -1,0 +1,3 @@
+rsa_used,n,Q2_unadj_patch_p,Q2_adj_patch_coef,Q2_adj_patch_p,Q2_adj_rsa_coef,Q2_adj_rsa_p,Q1_unadj_OR,Q1_unadj_p,Q1_adj_OR,Q1_adj_p
+monomer RSA (thesis),37,0.001,0.0029,0.8373,-3.9528,0.0111,8.571,0.0066,3.052,0.2729
+assembly RSA (this check),37,0.001,0.0008,0.9559,-4.5593,0.0112,8.571,0.0066,3.013,0.2883

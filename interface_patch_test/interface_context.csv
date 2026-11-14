@@ -1,0 +1,5 @@
+pair,rho
+A vs I,0.381
+A vs RSA,0.789
+I vs RSA,0.122
+I vs packing patch,-0.231

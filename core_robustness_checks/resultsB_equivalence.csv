@@ -1,0 +1,17 @@
+source,dataset,contrast,point_estimate,ci_low,ci_high,approx_SE,MDE_80pct_power
+variant_ml,Giacomelli 2018,Contrast 1: F5 vs F3 (patch added to substitution+burial+own),0.0065,-0.0117,0.0231,0.0089,0.0249
+variant_ml,Giacomelli 2018,Contrast 2: F4 vs F2 (patch added to substitution+burial),0.0068,-0.0143,0.0283,0.0109,0.0304
+variant_ml,Kato 2003,Contrast 1: F5 vs F3 (patch added to substitution+burial+own),0.0111,-0.0041,0.0261,0.0077,0.0216
+variant_ml,Kato 2003,Contrast 2: F4 vs F2 (patch added to substitution+burial),-0.0034,-0.0213,0.0119,0.0085,0.0237
+alphamissense_test (function),Giacomelli 2018,PRIMARY 1: G5 vs G3 (patch added to S+AM+burial+own),0.01,-0.0042,0.0239,0.0072,0.0201
+alphamissense_test (function),Giacomelli 2018,PRIMARY 2: G4 vs G2 (patch added to S+AM+burial),0.0051,-0.0112,0.0212,0.0083,0.0231
+alphamissense_test (function),Kato 2003,PRIMARY 1: G5 vs G3 (patch added to S+AM+burial+own),0.0066,-0.005,0.0176,0.0058,0.0161
+alphamissense_test (function),Kato 2003,PRIMARY 2: G4 vs G2 (patch added to S+AM+burial),-0.0005,-0.0107,0.0107,0.0055,0.0153
+alphamissense_test (stability),residue-mean AM (primary),PRIMARY 1: (AM + patch) vs AM,0.017,-0.142,0.2,0.0872,0.2443
+alphamissense_test (stability),residue-mean AM (primary),PRIMARY 2: (RSA + AM + patch) vs (RSA + AM),-0.045,-0.109,0.0,0.0278,0.0779
+alphamissense_test (stability),substitution-matched AM (secondary),PRIMARY 1: (AM + patch) vs AM,0.079,-0.046,0.223,0.0686,0.1921
+alphamissense_test (stability),substitution-matched AM (secondary),PRIMARY 2: (RSA + AM + patch) vs (RSA + AM),0.002,-0.039,0.046,0.0217,0.0607
+structure_ai_test (function),Giacomelli 2018,PRIMARY: K1 vs K0 (3D-environment AI added to classical features),0.0222,-0.0048,0.0489,0.0137,0.0384
+structure_ai_test (function),Kato 2003,PRIMARY: K1 vs K0 (3D-environment AI added to classical features),0.0346,-0.0026,0.0694,0.0184,0.0514
+structure_ai_test (stability),stability (43 variants),PRIMARY: R1 vs R0 (M_ctx added to burial + own + patch),0.183,-0.028,0.38,0.1041,0.2914
+main thesis Q1,n=37,patch OR (log scale),2.0794,0.4055,4.0775,0.9368,2.6229

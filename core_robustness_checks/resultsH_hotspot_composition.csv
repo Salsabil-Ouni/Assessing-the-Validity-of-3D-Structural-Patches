@@ -1,0 +1,9 @@
+split,property,mean_group1,mean_group2,mannwhitney_p,AUC
+hotspot vs non-hotspot (g_i >= 2 kcal/mol),hydro,1.012,-1.245,0.0,0.733
+hotspot vs non-hotspot (g_i >= 2 kcal/mol),volume,136.181,130.25,0.16444,0.561
+hotspot vs non-hotspot (g_i >= 2 kcal/mol),charge,0.078,0.277,0.00148,0.401
+hotspot vs non-hotspot (g_i >= 2 kcal/mol),burial,0.884,0.649,0.0,0.814
+in-patch vs outside-the-patch (spatially clustered hotspots only),hydro,1.035,-1.238,0.0,0.731
+in-patch vs outside-the-patch (spatially clustered hotspots only),volume,137.389,129.715,0.10025,0.573
+in-patch vs outside-the-patch (spatially clustered hotspots only),charge,0.079,0.275,0.00186,0.402
+in-patch vs outside-the-patch (spatially clustered hotspots only),burial,0.896,0.645,0.0,0.828

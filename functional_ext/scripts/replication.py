@@ -32,6 +32,8 @@ HOTSPOTS = [('R',175,'H'),('R',248,'W'),('R',248,'Q'),('R',249,'S'),
             ('G',245,'S'),('R',273,'H'),('R',282,'W')]
 
 struct = pd.read_csv(ROOT / "results" / "residue_table_full_cA.csv")[["position","patch_score","rsa","in_patch"]]
+struct_wt = dict(zip(pd.read_csv(ROOT / "results" / "ala_scan.csv")["position"],
+                      pd.read_csv(ROOT / "results" / "ala_scan.csv")["residue"]))
 
 def load(fname):
     df = pd.read_csv(FE / "data" / fname)
@@ -44,6 +46,17 @@ def load(fname):
             rows.append((pos, three1[wt], three1[mut], float(r['score'])))
     return pd.DataFrame(rows, columns=['position','wt','mut','score'])
 
+def numbering_check(v):
+    """Fraction of overlapping positions whose assay wt matches the structure wt.
+    A dataset numbered on a different construct/species will show a low match rate
+    even though positions numerically overlap the structure's range."""
+    v2 = v.drop_duplicates(subset="position")
+    checked = [(p, wt, struct_wt.get(p)) for p, wt in zip(v2.position, v2.wt) if p in struct_wt]
+    if not checked:
+        return 0.0, 0
+    matches = sum(1 for _, wt, swt in checked if wt == swt)
+    return matches / len(checked), len(checked)
+
 def orient(v):
     """Flip so HIGHER = MORE DAMAGING, decided by known LOF hotspots."""
     hs = pd.concat([v[(v.position==p)&(v.wt==w)&(v.mut==m)] for w,p,m in HOTSPOTS])
@@ -55,6 +68,16 @@ def orient(v):
 
 def analyse(name, fname):
     v = load(fname)
+    match_rate, n_checked = numbering_check(v)
+    if match_rate < 0.8:
+        print(f"\n### {name}  -- EXCLUDED: wt-identity check failed "
+              f"({match_rate:.0%} match on {n_checked} overlapping positions; "
+              f"numbering inconsistent with the structure/UniProt P04637)")
+        return dict(assay=name, n=np.nan, n_buried=np.nan, Q1_OR=np.nan, Q1_p=np.nan,
+                    Q2_rho=np.nan, Q2_p=np.nan, Q2_buried_rho=np.nan, Q2_buried_p=np.nan,
+                    patch_coef_unadj=np.nan, patch_p_unadj=np.nan,
+                    patch_coef_rsaadj=np.nan, patch_p_rsaadj=np.nan,
+                    excluded_numbering_match_rate=match_rate)
     v, note = orient(v)
     res = v.groupby("position", as_index=False).agg(damage=("score","mean"), n_sub=("score","size"))
     d = res.merge(struct, on="position", how="inner").dropna(subset=["rsa"])

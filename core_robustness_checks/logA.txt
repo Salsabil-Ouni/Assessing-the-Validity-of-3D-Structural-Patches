@@ -1,0 +1,14 @@
+context: Spearman(sum patch score, neighbourhood size) = +0.889  (n=194)
+context: OLS patch_score ~ RSA, R2=0.540 (fraction of the raw score explained by RSA alone)
+
+=== n=37 (experimental) ===
+  sum (current thesis score)           unadj rho=+0.507 (p=0.00135) | unadj coef p=0.00101 | ADJUSTED FOR RSA: coef p=0.837, RSA coef p=0.0111 | corr(score,RSA)=-0.798
+  mean (density-normalised)            unadj rho=+0.370 (p=0.0241) | unadj coef p=0.0303 | ADJUSTED FOR RSA: coef p=0.936, RSA coef p=0.000442 | corr(score,RSA)=-0.581
+  residual after regressing out RSA    unadj rho=+0.236 (p=0.159) | unadj coef p=0.305 | ADJUSTED FOR RSA: coef p=0.837, RSA coef p=6.6e-05 | corr(score,RSA)=-0.233
+
+=== n=194 (FoldX-extended, own alanine-scan value as outcome) ===
+  sum (current thesis score)           unadj rho=+0.545 (p=1.97e-16) | unadj coef p=2.36e-16 | ADJUSTED FOR RSA: coef p=5.94e-06, RSA coef p=0.045 | corr(score,RSA)=-0.735
+  mean (density-normalised)            unadj rho=+0.398 (p=9.21e-09) | unadj coef p=2.93e-09 | ADJUSTED FOR RSA: coef p=0.00228, RSA coef p=6.72e-07 | corr(score,RSA)=-0.508
+  residual after regressing out RSA    unadj rho=+0.266 (p=0.000181) | unadj coef p=7.75e-05 | ADJUSTED FOR RSA: coef p=5.94e-06, RSA coef p=9.83e-14 | corr(score,RSA)=+0.000
+
+saved resultsA_density_patch.csv

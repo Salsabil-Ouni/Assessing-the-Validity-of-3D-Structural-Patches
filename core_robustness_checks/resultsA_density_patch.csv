@@ -1,0 +1,7 @@
+dataset,score,unadj_spearman,unadj_p,unadj_coef,unadj_coef_p,adj_coef,adj_coef_p,adj_rsa_coef,adj_rsa_p,corr_with_rsa
+n=37 (experimental),sum (current thesis score),0.5074,0.0013,0.0327,0.001,0.0029,0.8373,-3.9528,0.0111,-0.798
+n=37 (experimental),mean (density-normalised),0.3703,0.0241,1.2436,0.0303,-0.0463,0.9358,-4.2472,0.0004,-0.581
+n=37 (experimental),residual after regressing out RSA,0.2363,0.1592,0.0176,0.3051,0.0029,0.8373,-4.1518,0.0001,-0.233
+"n=194 (FoldX-extended, own alanine-scan value as outcome)",sum (current thesis score),0.5454,0.0,0.0407,0.0,0.0309,0.0,-1.2553,0.045,-0.735
+"n=194 (FoldX-extended, own alanine-scan value as outcome)",mean (density-normalised),0.3979,0.0,1.2989,0.0,0.7039,0.0023,-2.5936,0.0,-0.508
+"n=194 (FoldX-extended, own alanine-scan value as outcome)",residual after regressing out RSA,0.2656,0.0002,0.0309,0.0001,0.0309,0.0,-3.3867,0.0,0.0

@@ -1,0 +1,38 @@
+n = 37 residues, 19 destabilising
+raw Spearman with |ddG|: AM residue mean +0.622, AM of measured substitution +0.705, RSA(1-) +0.618, patch +0.507, own +0.552
+
+=== residue-mean AM (primary) ===
+  AM                   LOO Spearman +0.553  R2 +0.342  AUC 0.810  perm p 0.001
+  RSA                  LOO Spearman +0.517  R2 +0.331  AUC 0.696  perm p 0.001
+  patch score          LOO Spearman +0.449  R2 +0.154  AUC 0.649  perm p 0.004
+  own value            LOO Spearman +0.515  R2 +0.268  AUC 0.754  perm p 0.002
+  RSA + patch          LOO Spearman +0.520  R2 +0.251  AUC 0.722
+  RSA + AM             LOO Spearman +0.588  R2 +0.412  AUC 0.789
+  patch + AM           LOO Spearman +0.570  R2 +0.332  AUC 0.775
+  RSA + patch + AM     LOO Spearman +0.543  R2 +0.349  AUC 0.775
+  own + AM             LOO Spearman +0.632  R2 +0.404  AUC 0.822
+  own + patch + AM     LOO Spearman +0.606  R2 +0.350  AUC 0.816
+  PRIMARY 1: (AM + patch) vs AM: delta +0.017  95% CI [-0.142, +0.200]
+  PRIMARY 2: (RSA + AM + patch) vs (RSA + AM): delta -0.045  95% CI [-0.109, +0.000]
+  Secondary: (RSA + AM) vs RSA: delta +0.071  95% CI [-0.037, +0.191]
+  Secondary: (patch + AM) vs patch: delta +0.120  95% CI [-0.039, +0.277]
+  Secondary: (own + patch + AM) vs (own + AM): delta -0.026  95% CI [-0.076, +0.009]
+
+=== substitution-matched AM (secondary) ===
+  AM                   LOO Spearman +0.628  R2 +0.608  AUC 0.886  perm p 0.001
+  RSA                  LOO Spearman +0.517  R2 +0.331  AUC 0.696  perm p 0.002
+  patch score          LOO Spearman +0.449  R2 +0.154  AUC 0.649  perm p 0.004
+  own value            LOO Spearman +0.515  R2 +0.268  AUC 0.754  perm p 0.001
+  RSA + patch          LOO Spearman +0.520  R2 +0.251  AUC 0.722
+  RSA + AM             LOO Spearman +0.723  R2 +0.647  AUC 0.901
+  patch + AM           LOO Spearman +0.707  R2 +0.619  AUC 0.886
+  RSA + patch + AM     LOO Spearman +0.725  R2 +0.614  AUC 0.895
+  own + AM             LOO Spearman +0.758  R2 +0.648  AUC 0.906
+  own + patch + AM     LOO Spearman +0.746  R2 +0.621  AUC 0.901
+  PRIMARY 1: (AM + patch) vs AM: delta +0.079  95% CI [-0.046, +0.223]
+  PRIMARY 2: (RSA + AM + patch) vs (RSA + AM): delta +0.002  95% CI [-0.039, +0.046]
+  Secondary: (RSA + AM) vs RSA: delta +0.206  95% CI [-0.049, +0.494]
+  Secondary: (patch + AM) vs patch: delta +0.257  95% CI [-0.003, +0.528]
+  Secondary: (own + patch + AM) vs (own + AM): delta -0.011  95% CI [-0.046, +0.019]
+
+saved results

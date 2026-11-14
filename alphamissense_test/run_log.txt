@@ -1,0 +1,46 @@
+
+=== Giacomelli 2018: 3325 substitutions at 175 residues ===
+  raw Spearman(AlphaMissense, damage) = 0.612; Spearman(ESM-2 score, damage) = 0.490
+  G0 AlphaMissense alone               OOF Spearman 0.591   R2 0.368
+  G1 S + AlphaMissense                 OOF Spearman 0.643   R2 0.434
+  G2 + burial                          OOF Spearman 0.650   R2 0.441
+  G3 + burial + own value              OOF Spearman 0.648   R2 0.441
+  G4 + burial + patch                  OOF Spearman 0.655   R2 0.446
+  G5 + burial + own + patch            OOF Spearman 0.658   R2 0.455
+  F2 (no AM) S + burial                OOF Spearman 0.613   R2 0.392
+  F3 (no AM) S + burial + own value    OOF Spearman 0.620   R2 0.403
+  check F2 (no AM) S + burial: now 0.6132 vs earlier 0.6132  (diff -0.0000)
+  check F3 (no AM) S + burial + own value: now 0.6197 vs earlier 0.6197  (diff +0.0000)
+  PRIMARY 1: G5 vs G3 (patch added to S+AM+burial+own): delta +0.0100  95% CI [-0.0042, +0.0239]
+  PRIMARY 2: G4 vs G2 (patch added to S+AM+burial): delta +0.0051  95% CI [-0.0112, +0.0212]
+  Secondary: G2 vs F2 (AlphaMissense added to S+burial): delta +0.0366  95% CI [+0.0116, +0.0610]
+  Secondary: G3 vs F3 (AlphaMissense added to S+burial+own): delta +0.0283  95% CI [+0.0027, +0.0531]
+  importance (drop in held-out Spearman when shuffled): {'AlphaMissense score': 0.267, 'ESM-2 zero-shot score': 0.045, 'amino-acid chemistry': 0.044, 'burial (RSA)': 0.028, 'own alanine-scan value': 0.014, 'patch score': 0.023}
+
+=== Kato 2003: 1147 substitutions at 194 residues ===
+  raw Spearman(AlphaMissense, damage) = 0.704; Spearman(ESM-2 score, damage) = 0.551
+  G0 AlphaMissense alone               OOF Spearman 0.685   R2 0.482
+  G1 S + AlphaMissense                 OOF Spearman 0.711   R2 0.508
+  G2 + burial                          OOF Spearman 0.719   R2 0.521
+  G3 + burial + own value              OOF Spearman 0.718   R2 0.519
+  G4 + burial + patch                  OOF Spearman 0.719   R2 0.517
+  G5 + burial + own + patch            OOF Spearman 0.725   R2 0.527
+  F2 (no AM) S + burial                OOF Spearman 0.641   R2 0.411
+  F3 (no AM) S + burial + own value    OOF Spearman 0.636   R2 0.407
+  check F2 (no AM) S + burial: now 0.6414 vs earlier 0.6414  (diff -0.0000)
+  check F3 (no AM) S + burial + own value: now 0.6363 vs earlier 0.6363  (diff +0.0000)
+  PRIMARY 1: G5 vs G3 (patch added to S+AM+burial+own): delta +0.0066  95% CI [-0.0050, +0.0176]
+  PRIMARY 2: G4 vs G2 (patch added to S+AM+burial): delta -0.0005  95% CI [-0.0107, +0.0107]
+  Secondary: G2 vs F2 (AlphaMissense added to S+burial): delta +0.0779  95% CI [+0.0450, +0.1129]
+  Secondary: G3 vs F3 (AlphaMissense added to S+burial+own): delta +0.0816  95% CI [+0.0482, +0.1154]
+  importance (drop in held-out Spearman when shuffled): {'AlphaMissense score': 0.435, 'ESM-2 zero-shot score': 0.06, 'amino-acid chemistry': 0.026, 'burial (RSA)': 0.018, 'own alanine-scan value': 0.016, 'patch score': 0.019}
+
+=== Residue level: 37 residues with measured |ddG| ===
+  AlphaMissense (residue mean)   Spearman with |ddG| = +0.622 (p = 0.0000)
+  burial (1 - RSA)               Spearman with |ddG| = +0.618 (p = 0.0000)
+  own alanine-scan value         Spearman with |ddG| = +0.552 (p = 0.0004)
+  patch score                    Spearman with |ddG| = +0.507 (p = 0.0013)
+  AlphaMissense residue mean vs burial (RSA) across 194 residues: Spearman -0.500
+  AlphaMissense residue mean vs patch score across 194 residues: Spearman +0.357
+
+saved results

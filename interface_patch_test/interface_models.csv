@@ -1,0 +1,13 @@
+assay,features,oof_spearman,oof_R2,n_rows,n_residues
+Giacomelli 2018,J0 S+B+O+P (no interface term),0.6262,0.4136,3325,175
+Giacomelli 2018,J1 J0 + own interface value,0.6277,0.4172,3325,175
+Giacomelli 2018,J2 J1 + aggregated interface score,0.6277,0.4187,3325,175
+Giacomelli 2018,J0a J0 + AlphaMissense,0.6572,0.4533,3325,175
+Giacomelli 2018,J1a J1 + AlphaMissense,0.6571,0.4534,3325,175
+Giacomelli 2018,J2a J2 + AlphaMissense,0.6582,0.4558,3325,175
+Kato 2003,J0 S+B+O+P (no interface term),0.6474,0.4221,1147,194
+Kato 2003,J1 J0 + own interface value,0.6471,0.423,1147,194
+Kato 2003,J2 J1 + aggregated interface score,0.6642,0.4459,1147,194
+Kato 2003,J0a J0 + AlphaMissense,0.7219,0.5229,1147,194
+Kato 2003,J1a J1 + AlphaMissense,0.7228,0.5239,1147,194
+Kato 2003,J2a J2 + AlphaMissense,0.7295,0.5326,1147,194

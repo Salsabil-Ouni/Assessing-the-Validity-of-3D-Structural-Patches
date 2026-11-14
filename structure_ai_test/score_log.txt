@@ -1,0 +1,18 @@
+done 2ocj_v_48_020_ctx in 37s
+done 2ocj_v_48_020_bb in 37s
+done 2ocj_v_48_002_ctx in 48s
+done 2ocj_v_48_010_ctx in 47s
+done 2ocj_v_48_030_ctx in 48s
+done 2ocj_v_48_002_bb in 59s
+done 2ocj_v_48_010_bb in 52s
+done 2ocj_v_48_030_bb in 53s
+done 2xwr_v_48_020_ctx in 51s
+done 2xwr_v_48_020_bb in 54s
+done 2xwr_v_48_002_ctx in 61s
+done 2xwr_v_48_010_ctx in 62s
+done 2xwr_v_48_030_ctx in 60s
+done 2xwr_v_48_002_bb in 59s
+done 2xwr_v_48_010_bb in 62s
+done 2xwr_v_48_030_bb in 56s
+saved scores: (3686, 23) | columns: ['2ocj_v_48_002_ctx', '2ocj_v_48_002_bb', '2ocj_v_48_010_ctx', '2ocj_v_48_010_bb', '2ocj_v_48_020_ctx', '2ocj_v_48_020_bb'] ...
+exit 0

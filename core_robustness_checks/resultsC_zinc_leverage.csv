@@ -1,0 +1,5 @@
+dataset,score,subset,n,spearman,p
+n=37 (experimental),patch score,all residues,37,0.5074,0.0013
+n=37 (experimental),patch score,zinc ligands excluded,36,0.504,0.0017
+n=194 (FoldX-extended),patch score,all residues,194,0.5454,0.0
+n=194 (FoldX-extended),patch score,zinc ligands excluded,190,0.5362,0.0

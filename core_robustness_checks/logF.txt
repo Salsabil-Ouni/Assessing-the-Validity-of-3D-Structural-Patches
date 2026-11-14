@@ -1,0 +1,22 @@
+chains in the raw deposited assembly: ['A', 'B', 'C', 'D']
+assembly RSA computed for 194 chain-A residues (raw, unrepaired coordinates)
+positions with no match in the raw assembly (kept at monomer RSA... excluded here instead): 0
+
+corr(monomer RSA, assembly RSA) across 194 residues: rho=+0.976
+residues where isolated-chain RSA exceeds assembly RSA by >0.05 (candidate interface positions): 24 of 194
+
+of the 37 experimental residues, 4 are candidate interface positions by the >0.05 rule; assembly RSA available for 37 of 37
+
+=== RSA source: monomer RSA (thesis) (n=37) ===
+  Q2 unadjusted patch coefficient p = 0.00101
+  Q2 adjusted: patch coef +0.0029 (p=0.8373), rsa coef -3.9528 (p=0.01114)
+  Q1 unadjusted OR = 8.57 (p=0.006628)
+  Q1 adjusted OR   = 3.05 (p=0.2729)
+
+=== RSA source: assembly RSA (this check) (n=37) ===
+  Q2 unadjusted patch coefficient p = 0.00101
+  Q2 adjusted: patch coef +0.0008 (p=0.9559), assembly_rsa coef -4.5593 (p=0.01118)
+  Q1 unadjusted OR = 8.57 (p=0.006628)
+  Q1 adjusted OR   = 3.01 (p=0.2883)
+
+saved resultsF_assembly_rsa.csv

@@ -1,0 +1,9 @@
+assay,contrast,delta_spearman,ci_low,ci_high
+Giacomelli 2018,PRIMARY: J2 vs J1 (aggregated interface score added),-0.0,-0.0075,0.0075
+Giacomelli 2018,Secondary: J1 vs J0 (own interface value added),0.0015,-0.0049,0.0074
+Giacomelli 2018,"Secondary: J2a vs J1a (aggregated added, with AlphaMissense)",0.0012,-0.0043,0.0067
+Giacomelli 2018,"Secondary: J1a vs J0a (own interface added, with AlphaMissense)",-0.0001,-0.0048,0.0046
+Kato 2003,PRIMARY: J2 vs J1 (aggregated interface score added),0.0171,0.0046,0.0306
+Kato 2003,Secondary: J1 vs J0 (own interface value added),-0.0003,-0.0104,0.01
+Kato 2003,"Secondary: J2a vs J1a (aggregated added, with AlphaMissense)",0.0068,-0.0004,0.0145
+Kato 2003,"Secondary: J1a vs J0a (own interface added, with AlphaMissense)",0.0008,-0.0035,0.0054

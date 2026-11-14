@@ -1,0 +1,11 @@
+n=37, k (true in-patch count)=15, a (true in-patch AND destabilising)=12, destabilising total=19
+adjacency among the 37 (<= 8.0 A): 101 edges, 36 of 37 residues have at least one neighbour among the 37
+successful draws: 5000 / 5000 (0 failed to reach size 15 in 200 tries and were skipped)
+
+observed a=12 of k=15 in-patch residues destabilising
+null distribution over 5000 random size-15 CONNECTED subgraphs of the 37-residue graph: mean=9.34, 95th pct=11.0, max=14
+one-sided empirical p-value (P[null a >= observed a]) = 0.0184
+
+for reference, nominal Fisher's exact test on the same table: OR=8.57, p=0.0069
+
+saved resultsE_permutation_null.csv, resultsE_summary.csv

@@ -1,0 +1,15 @@
+dataset,contrast,delta_spearman,ci_low,ci_high
+Giacomelli 2018,PRIMARY: K1 vs K0 (3D-environment AI added to classical features),0.0222,-0.0048,0.0489
+Giacomelli 2018,Secondary: K3 vs K2 (added beyond the language model),0.0001,-0.0172,0.0163
+Giacomelli 2018,Secondary: K5 vs K4 (added beyond language model + AlphaMissense),0.0068,-0.0063,0.0208
+Giacomelli 2018,Secondary: K1 vs K2 (structure AI compared with language AI),-0.0661,-0.1088,-0.0256
+Giacomelli 2018,Secondary: K6 vs K0 (backbone geometry only),0.024,0.0014,0.0475
+Giacomelli 2018,Robustness: K1e vs K0 (ensemble of noise levels),0.0257,-0.0015,0.0529
+Giacomelli 2018,"Robustness: K1x vs K0 (second structure, 2XWR)",0.0185,-0.0066,0.0449
+Kato 2003,PRIMARY: K1 vs K0 (3D-environment AI added to classical features),0.0346,-0.0026,0.0694
+Kato 2003,Secondary: K3 vs K2 (added beyond the language model),0.0165,-0.0036,0.0366
+Kato 2003,Secondary: K5 vs K4 (added beyond language model + AlphaMissense),0.0094,-0.0028,0.0213
+Kato 2003,Secondary: K1 vs K2 (structure AI compared with language AI),-0.1105,-0.1732,-0.0475
+Kato 2003,Secondary: K6 vs K0 (backbone geometry only),0.0431,0.011,0.0737
+Kato 2003,Robustness: K1e vs K0 (ensemble of noise levels),0.0422,0.0043,0.0792
+Kato 2003,"Robustness: K1x vs K0 (second structure, 2XWR)",0.03,-0.0073,0.0637

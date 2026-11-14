@@ -1,0 +1,6 @@
+full n = 37
+excluding the 2 stabilising residues, n = 35
+  all 37 residues                            Q2 Spearman(patch score, |ddG|) = +0.507 (p=0.00135)
+  destabilising/neutral only (35 residues)   Q2 Spearman(patch score, |ddG|) = +0.513 (p=0.00162)
+
+saved resultsG_q2_sensitivity.csv

@@ -1,0 +1,8 @@
+Zinc ligands present in n=37 set: [242]
+Zinc ligands present in n=194 set: [176, 179, 238, 242]
+n=37 (experimental)        | patch score              | all residues           | n= 37 | rho=+0.507 (p=0.00135)
+n=37 (experimental)        | patch score              | zinc ligands excluded  | n= 36 | rho=+0.504 (p=0.00172)
+n=194 (FoldX-extended)     | patch score              | all residues           | n=194 | rho=+0.545 (p=1.97e-16)
+n=194 (FoldX-extended)     | patch score              | zinc ligands excluded  | n=190 | rho=+0.536 (p=1.55e-15)
+
+saved resultsC_zinc_leverage.csv

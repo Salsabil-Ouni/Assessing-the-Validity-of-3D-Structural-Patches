@@ -1,0 +1,21 @@
+descriptor_version,features,LOO_spearman,LOO_R2,perm_p,LOO_AUC
+residue-mean AM (primary),AM,0.553,0.342,0.001,0.81
+residue-mean AM (primary),RSA,0.517,0.331,0.001,0.696
+residue-mean AM (primary),patch score,0.449,0.154,0.004,0.649
+residue-mean AM (primary),own value,0.515,0.268,0.002,0.754
+residue-mean AM (primary),RSA + patch,0.52,0.251,,0.722
+residue-mean AM (primary),RSA + AM,0.588,0.412,,0.789
+residue-mean AM (primary),patch + AM,0.57,0.332,,0.775
+residue-mean AM (primary),RSA + patch + AM,0.543,0.349,,0.775
+residue-mean AM (primary),own + AM,0.632,0.404,,0.822
+residue-mean AM (primary),own + patch + AM,0.606,0.35,,0.816
+substitution-matched AM (secondary),AM,0.628,0.608,0.001,0.886
+substitution-matched AM (secondary),RSA,0.517,0.331,0.002,0.696
+substitution-matched AM (secondary),patch score,0.449,0.154,0.004,0.649
+substitution-matched AM (secondary),own value,0.515,0.268,0.001,0.754
+substitution-matched AM (secondary),RSA + patch,0.52,0.251,,0.722
+substitution-matched AM (secondary),RSA + AM,0.723,0.647,,0.901
+substitution-matched AM (secondary),patch + AM,0.707,0.619,,0.886
+substitution-matched AM (secondary),RSA + patch + AM,0.725,0.614,,0.895
+substitution-matched AM (secondary),own + AM,0.758,0.648,,0.906
+substitution-matched AM (secondary),own + patch + AM,0.746,0.621,,0.901

@@ -1,0 +1,84 @@
+
+=== FUNCTION: Giacomelli 2018: 3325 substitutions at 175 residues ===
+  raw Spearman with damage, M_ctx (3D environment + neighbours)    +0.423  [+0.341, +0.495]
+  raw Spearman with damage, M_bb (backbone geometry only)          +0.311  [+0.227, +0.395]
+  raw Spearman with damage, ESM-2 (minus log ratio)                +0.490  [+0.419, +0.554]
+  raw Spearman with damage, AlphaMissense                          +0.612  [+0.550, +0.664]
+  K0 classical (C+B+O+P)                         OOF Spearman 0.5414
+  K1 K0 + M_ctx                                  OOF Spearman 0.5636
+  K2 K0 + ESM-2                                  OOF Spearman 0.6298
+  K3 K2 + M_ctx                                  OOF Spearman 0.6298
+  K4 K2 + AlphaMissense                          OOF Spearman 0.6556
+  K5 K4 + M_ctx                                  OOF Spearman 0.6625
+  K6 K0 + M_bb                                   OOF Spearman 0.5654
+  K1e K0 + M_ctx (ensemble of noise levels)      OOF Spearman 0.5671
+  K1x K0 + M_ctx (2XWR structure)                OOF Spearman 0.5599
+  PRIMARY: K1 vs K0 (3D-environment AI added to classical features): delta +0.0222  95% CI [-0.0048, +0.0489]
+  Secondary: K3 vs K2 (added beyond the language model): delta +0.0001  95% CI [-0.0172, +0.0163]
+  Secondary: K5 vs K4 (added beyond language model + AlphaMissense): delta +0.0068  95% CI [-0.0063, +0.0208]
+  Secondary: K1 vs K2 (structure AI compared with language AI): delta -0.0661  95% CI [-0.1088, -0.0256]
+  Secondary: K6 vs K0 (backbone geometry only): delta +0.0240  95% CI [+0.0014, +0.0475]
+  Robustness: K1e vs K0 (ensemble of noise levels): delta +0.0257  95% CI [-0.0015, +0.0529]
+  Robustness: K1x vs K0 (second structure, 2XWR): delta +0.0185  95% CI [-0.0066, +0.0449]
+
+=== FUNCTION: Kato 2003: 1147 substitutions at 194 residues ===
+  raw Spearman with damage, M_ctx (3D environment + neighbours)    +0.454  [+0.360, +0.541]
+  raw Spearman with damage, M_bb (backbone geometry only)          +0.386  [+0.292, +0.471]
+  raw Spearman with damage, ESM-2 (minus log ratio)                +0.551  [+0.472, +0.617]
+  raw Spearman with damage, AlphaMissense                          +0.704  [+0.654, +0.744]
+  K0 classical (C+B+O+P)                         OOF Spearman 0.5015
+  K1 K0 + M_ctx                                  OOF Spearman 0.5361
+  K2 K0 + ESM-2                                  OOF Spearman 0.6466
+  K3 K2 + M_ctx                                  OOF Spearman 0.6630
+  K4 K2 + AlphaMissense                          OOF Spearman 0.7226
+  K5 K4 + M_ctx                                  OOF Spearman 0.7320
+  K6 K0 + M_bb                                   OOF Spearman 0.5446
+  K1e K0 + M_ctx (ensemble of noise levels)      OOF Spearman 0.5436
+  K1x K0 + M_ctx (2XWR structure)                OOF Spearman 0.5314
+  PRIMARY: K1 vs K0 (3D-environment AI added to classical features): delta +0.0346  95% CI [-0.0026, +0.0694]
+  Secondary: K3 vs K2 (added beyond the language model): delta +0.0165  95% CI [-0.0036, +0.0366]
+  Secondary: K5 vs K4 (added beyond language model + AlphaMissense): delta +0.0094  95% CI [-0.0028, +0.0213]
+  Secondary: K1 vs K2 (structure AI compared with language AI): delta -0.1105  95% CI [-0.1732, -0.0475]
+  Secondary: K6 vs K0 (backbone geometry only): delta +0.0431  95% CI [+0.0110, +0.0737]
+  Robustness: K1e vs K0 (ensemble of noise levels): delta +0.0422  95% CI [+0.0043, +0.0792]
+  Robustness: K1x vs K0 (second structure, 2XWR): delta +0.0300  95% CI [-0.0073, +0.0637]
+
+=== STABILITY: 43 measured variants at 37 residues ===
+  R0 burial + own + patch        LOO Spearman +0.493  AUC 0.795
+  M_ctx alone                    LOO Spearman +0.772  AUC 0.813
+  R1 R0 + M_ctx                  LOO Spearman +0.676  AUC 0.796
+  R0 + ESM-2                     LOO Spearman +0.610  AUC 0.846
+  R0 + AlphaMissense             LOO Spearman +0.709  AUC 0.924
+  R0 + ESM-2 + M_ctx             LOO Spearman +0.699  AUC 0.843
+  R0 + AlphaMissense + M_ctx     LOO Spearman +0.757  AUC 0.883
+  R0 + M_bb                      LOO Spearman +0.631  AUC 0.796
+  PRIMARY: R1 vs R0 (M_ctx added to burial + own + patch): delta +0.183  95% CI [-0.028, +0.380]
+  Secondary: (R0 + ESM-2 + M_ctx) vs (R0 + ESM-2): delta +0.089  95% CI [-0.035, +0.227]
+  Secondary: (R0 + AlphaMissense + M_ctx) vs (R0 + AlphaMissense): delta +0.048  95% CI [-0.081, +0.206]
+  Secondary: R1 vs (R0 + ESM-2) (structure AI vs language AI): delta +0.066  95% CI [-0.086, +0.241]
+  Secondary: (R0 + M_bb) vs R0 (backbone geometry only): delta +0.139  95% CI [-0.059, +0.322]
+  raw Spearman with destabilisation, M_ctx                      +0.773  [+0.607, +0.882]
+  raw Spearman with destabilisation, M_bb                       +0.762  [+0.590, +0.858]
+  raw Spearman with destabilisation, ESM-2 (minus log ratio)    +0.659  [+0.417, +0.802]
+  raw Spearman with destabilisation, AlphaMissense              +0.722  [+0.552, +0.800]
+  raw Spearman with destabilisation, burial (1 - RSA)           +0.491  [+0.184, +0.713]
+  raw Spearman with destabilisation, own alanine-scan value     +0.528  [+0.193, +0.783]
+  raw Spearman with destabilisation, patch score                +0.352  [+0.044, +0.606]
+
+=== RESIDUE LEVEL (194 residues): AI sensitivity, computed without FoldX, alanine scanning or labels ===
+  Spearman(AI sensitivity, burial 1-RSA)                                 +0.475 
+  Spearman(AI sensitivity, packing patch score)                          +0.353 
+    same, controlling for burial (partial Spearman)                      -0.021 
+  AUC: hotspot-patch residues more sensitive than others (AI sensitivity) +0.845 (n in patch 63, outside 131; p=7.3e-15)
+    same AUC using burial (1-RSA) alone                                  +0.828 
+  Giacomelli 2018: Spearman(AI sensitivity, residue-mean damage)         +0.497 (n=175)
+  Giacomelli 2018:   controlling for burial                              +0.279 
+  Giacomelli 2018: Spearman(burial 1-RSA, residue-mean damage), for comparison +0.677 
+  Giacomelli 2018: Spearman(packing patch score, residue-mean damage), for comparison +0.637 
+  Kato 2003: Spearman(AI sensitivity, residue-mean damage)               +0.472 (n=194)
+  Kato 2003:   controlling for burial                                    +0.290 
+  Kato 2003: Spearman(burial 1-RSA, residue-mean damage), for comparison +0.541 
+  Kato 2003: Spearman(packing patch score, residue-mean damage), for comparison +0.410 
+
+saved results
+exit 0

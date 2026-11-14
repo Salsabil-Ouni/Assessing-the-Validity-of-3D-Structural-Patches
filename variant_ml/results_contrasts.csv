@@ -1,0 +1,5 @@
+assay,contrast,delta_spearman,ci_low,ci_high
+Giacomelli 2018,Contrast 1: F5 vs F3 (patch added to substitution+burial+own),0.0065,-0.0117,0.0231
+Giacomelli 2018,Contrast 2: F4 vs F2 (patch added to substitution+burial),0.0068,-0.0143,0.0283
+Kato 2003,Contrast 1: F5 vs F3 (patch added to substitution+burial+own),0.0111,-0.0041,0.0261
+Kato 2003,Contrast 2: F4 vs F2 (patch added to substitution+burial),-0.0034,-0.0213,0.0119

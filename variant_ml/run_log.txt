@@ -1,0 +1,26 @@
+C:\Users\salsa\anaconda3\lib\site-packages\pandas\core\arrays\masked.py:60: UserWarning: Pandas requires version '1.3.6' or newer of 'bottleneck' (version '1.3.5' currently installed).
+  from pandas.core import (
+
+=== Giacomelli 2018: 3325 substitutions at 175 residues ===
+  F1 substitution only         OOF Spearman 0.580   R2 0.354
+  F2 + burial                  OOF Spearman 0.613   R2 0.392
+  F3 + burial + own value      OOF Spearman 0.620   R2 0.403
+  F4 + burial + patch          OOF Spearman 0.620   R2 0.401
+  F5 + burial + own + patch    OOF Spearman 0.626   R2 0.414
+  F6 + patch only              OOF Spearman 0.612   R2 0.388
+  Contrast 1: F5 vs F3 (patch added to substitution+burial+own): delta +0.0065  95% CI [-0.0117, +0.0231]
+  Contrast 2: F4 vs F2 (patch added to substitution+burial): delta +0.0068  95% CI [-0.0143, +0.0283]
+  importance (drop in held-out Spearman when shuffled): {'ESM-2 zero-shot score': 0.191, 'amino-acid chemistry': 0.088, 'burial (RSA)': 0.094, 'own alanine-scan value': 0.031, 'patch score': 0.03}
+
+=== Kato 2003: 1147 substitutions at 194 residues ===
+  F1 substitution only         OOF Spearman 0.588   R2 0.353
+  F2 + burial                  OOF Spearman 0.641   R2 0.411
+  F3 + burial + own value      OOF Spearman 0.636   R2 0.407
+  F4 + burial + patch          OOF Spearman 0.638   R2 0.407
+  F5 + burial + own + patch    OOF Spearman 0.647   R2 0.422
+  F6 + patch only              OOF Spearman 0.614   R2 0.377
+  Contrast 1: F5 vs F3 (patch added to substitution+burial+own): delta +0.0111  95% CI [-0.0041, +0.0261]
+  Contrast 2: F4 vs F2 (patch added to substitution+burial): delta -0.0034  95% CI [-0.0213, +0.0119]
+  importance (drop in held-out Spearman when shuffled): {'ESM-2 zero-shot score': 0.31, 'amino-acid chemistry': 0.096, 'burial (RSA)': 0.11, 'own alanine-scan value': 0.036, 'patch score': 0.022}
+
+saved results
