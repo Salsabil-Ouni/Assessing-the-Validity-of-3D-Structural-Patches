@@ -5,3 +5,5 @@ data/
 functional_ext/data/
 
 *.md
+
+!/README.md
