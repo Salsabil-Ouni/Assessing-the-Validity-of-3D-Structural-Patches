@@ -47,7 +47,7 @@ for j, (a, c) in enumerate(ASSAYS):
 ax.set_yticks(y); ax.set_yticklabels([LAB[s] for s in sets], fontsize=9)
 ax.set_xlim(0.5, 0.79)
 ax.set_xlabel("Held-out Spearman with measured damage", fontsize=9.5)
-ax.set_title("A. AlphaMissense is the strongest input", loc="left", fontsize=11.5, fontweight="bold")
+ax.set_title("A", loc="left", fontsize=11.5, fontweight="bold")
 clean(ax)
 ax.legend(handles=[Patch(color=c, label=a) for a, c in ASSAYS], loc="upper center", bbox_to_anchor=(0.5, -0.12),
           ncol=2, frameon=False, fontsize=9.5, labelcolor=INK2)
@@ -72,15 +72,13 @@ def forest(ax, prefixes, labels, xlim, title, xlabel):
 
 forest(axes[1], ["PRIMARY 2", "PRIMARY 1"],
        ["patch on top of\nAlphaMissense + burial", "patch on top of\nAlphaMissense + burial + own"],
-       (-0.04, 0.04), "B. Patch score: every interval includes zero",
+       (-0.04, 0.04), "B",
        "Gain in held-out Spearman from adding the patch score\n(dot = estimate, bar = 95% interval over residues)")
 forest(axes[2], ["Secondary: G2", "Secondary: G3"],
        ["AlphaMissense on top of\nsubstitution + burial", "AlphaMissense on top of\nsubstitution + burial + own"],
-       (-0.02, 0.135), "C. AlphaMissense: no interval includes zero",
+       (-0.02, 0.135), "C",
        "Gain in held-out Spearman from adding AlphaMissense\n(dot = estimate, bar = 95% interval over residues)")
 
-fig.suptitle("AlphaMissense comparison: a strong predictor helps, but the patch score still adds nothing measurable",
-             fontsize=13.5, fontweight="bold", y=1.02)
 fig.text(0.5, -0.09, "Gradient-boosted models, 5-fold cross-validation grouped by residue (repeated 5 times), 3,325 substitutions (Giacomelli) and 1,147 (Kato). "
          "Analysis fixed in writing before running. Function, not stability.",
          ha="center", fontsize=8.8, color=INK2)

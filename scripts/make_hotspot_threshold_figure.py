@@ -22,16 +22,16 @@ ax = axes[0]
 lo = df.Q1_OR - df.Q1_CI_low
 hi = df.Q1_CI_high - df.Q1_OR
 ax.errorbar(df.hotspot_cutoff, df.Q1_OR, yerr=[lo, hi], fmt="o-", color="#1f4e8c",
-            capsize=4, ms=6, label="Q1 OR (marginal)")
+            capsize=4, ms=6, label="Enrichment OR (marginal)")
 buried = df.dropna(subset=["buried_only_OR"])
 ax.plot(buried.hotspot_cutoff, buried.buried_only_OR, "s--", color="#d62728", ms=6,
-        label="Q1 OR (buried-only)")
+        label="Enrichment OR (buried-only)")
 ax.axhline(1.0, color="grey", ls=":", lw=1)
 ax.axvline(2.0, color="grey", ls=":", lw=1, label="pipeline default (2.0)")
 ax.set_yscale("log")
 ax.set_xlabel(r"hotspot cut-off $g_i$ (kcal/mol)")
-ax.set_ylabel("Q1 odds ratio (95% CI)")
-ax.set_title("Enrichment vs hotspot threshold")
+ax.set_ylabel("Enrichment odds ratio (95% CI)")
+ax.set_title("A", loc="left", fontsize=12, fontweight="bold")
 ax.legend(fontsize=8)
 
 ax = axes[1]
@@ -39,11 +39,10 @@ ax.bar(df.hotspot_cutoff, df.n_hotspots, width=0.35, color="#1f4e8c", alpha=0.8)
 ax.axvline(2.0, color="grey", ls=":", lw=1)
 ax.set_xlabel(r"hotspot cut-off $g_i$ (kcal/mol)")
 ax.set_ylabel("number of hotspot residues (of 194)")
-ax.set_title("Hotspot count vs threshold")
+ax.set_title("B", loc="left", fontsize=12, fontweight="bold")
 for x, y in zip(df.hotspot_cutoff, df.n_hotspots):
     ax.text(x, y + 2, str(int(y)), ha="center", fontsize=8)
 
-fig.suptitle("Robustness of Q1 to the hotspot-definition threshold", y=1.02)
 fig.tight_layout()
 fig.savefig(FIG / "hotspot_threshold_panel.png", dpi=150, bbox_inches="tight")
 plt.close(fig)

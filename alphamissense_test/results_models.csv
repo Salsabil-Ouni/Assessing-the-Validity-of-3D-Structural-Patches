@@ -3,15 +3,15 @@ Giacomelli 2018,G0 AlphaMissense alone,0.5909,0.3676,3325,175
 Giacomelli 2018,G1 S + AlphaMissense,0.6432,0.4342,3325,175
 Giacomelli 2018,G2 + burial,0.6498,0.4408,3325,175
 Giacomelli 2018,G3 + burial + own value,0.648,0.4406,3325,175
-Giacomelli 2018,G4 + burial + patch,0.6549,0.4463,3325,175
-Giacomelli 2018,G5 + burial + own + patch,0.658,0.4546,3325,175
+Giacomelli 2018,G4 + burial + patch,0.6407,0.4322,3325,175
+Giacomelli 2018,G5 + burial + own + patch,0.6435,0.4369,3325,175
 Giacomelli 2018,F2 (no AM) S + burial,0.6132,0.3924,3325,175
 Giacomelli 2018,F3 (no AM) S + burial + own value,0.6197,0.4031,3325,175
 Kato 2003,G0 AlphaMissense alone,0.6846,0.482,1147,194
 Kato 2003,G1 S + AlphaMissense,0.7107,0.5084,1147,194
 Kato 2003,G2 + burial,0.7193,0.5211,1147,194
 Kato 2003,G3 + burial + own value,0.7179,0.519,1147,194
-Kato 2003,G4 + burial + patch,0.7188,0.5173,1147,194
-Kato 2003,G5 + burial + own + patch,0.7245,0.5267,1147,194
+Kato 2003,G4 + burial + patch,0.7213,0.5212,1147,194
+Kato 2003,G5 + burial + own + patch,0.723,0.5242,1147,194
 Kato 2003,F2 (no AM) S + burial,0.6414,0.4111,1147,194
 Kato 2003,F3 (no AM) S + burial + own value,0.6363,0.4068,1147,194

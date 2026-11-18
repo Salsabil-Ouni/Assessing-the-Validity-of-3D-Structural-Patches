@@ -1,6 +1,6 @@
 contrast,delta_LOO_spearman,ci_low,ci_high
-PRIMARY: R1 vs R0 (M_ctx added to burial + own + patch),0.183,-0.028,0.38
-Secondary: (R0 + ESM-2 + M_ctx) vs (R0 + ESM-2),0.089,-0.035,0.227
-Secondary: (R0 + AlphaMissense + M_ctx) vs (R0 + AlphaMissense),0.048,-0.081,0.206
-Secondary: R1 vs (R0 + ESM-2) (structure AI vs language AI),0.066,-0.086,0.241
-Secondary: (R0 + M_bb) vs R0 (backbone geometry only),0.139,-0.059,0.322
+PRIMARY: R1 vs R0 (M_ctx added to burial + own + patch),0.161,-0.028,0.339
+Secondary: (R0 + ESM-2 + M_ctx) vs (R0 + ESM-2),0.059,-0.067,0.181
+Secondary: (R0 + AlphaMissense + M_ctx) vs (R0 + AlphaMissense),0.028,-0.081,0.132
+Secondary: R1 vs (R0 + ESM-2) (structure AI vs language AI),0.008,-0.133,0.162
+Secondary: (R0 + M_bb) vs R0 (backbone geometry only),0.143,-0.02,0.314

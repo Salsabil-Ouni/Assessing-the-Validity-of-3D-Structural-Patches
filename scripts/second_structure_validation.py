@@ -22,7 +22,8 @@ from scipy.stats.contingency import odds_ratio
 ROOT = Path(__file__).resolve().parents[1]
 RES = ROOT / "results"
 cfg = yaml.safe_load(open(ROOT / "config.yaml", encoding="utf-8"))
-HOT, DIST = cfg["cutoffs"]["ala_hotspot_ddg"], cfg["cutoffs"]["patch_distance_angstrom"]
+HOT = cfg["cutoffs"]["ala_hotspot_ddg"]
+DIST = 6.0  # Ca-Ca, matching the supervisor's hotspotPatches.py (primary patch definition)
 DEL_BELOW = cfg["cutoffs"]["ddg_deleterious_below"]
 PDB = ROOT / "structure" / "tp53_2xwr_chainB_zinc_Repair.pdb"
 
@@ -51,14 +52,13 @@ print(f"Top-4 by magnitude: {[(p, ala_ddg[p]) for p in top4]} "
       f"(exact match to zinc ligands: {set(top4) == set(zn_lig)}; "
       f"in 2OCJ the top-4 were exactly the 4 zinc ligands)")
 
-# ---- geometry: neighbours + patches -----------------------------------------
+# ---- geometry: Ca-Ca neighbours + patches -----------------------------------
 chain = PDBParser(QUIET=True).get_structure("p", str(PDB))[0]["B"]
-heavy = {r.id[1]: np.array([a.coord for a in r if (a.element or "").strip().upper() != "H"])
-         for r in chain if r.id[1] in ala_ddg}
+heavy = {r.id[1]: r["CA"].coord for r in chain if r.id[1] in ala_ddg and r.has_id("CA")}
 positions = sorted(heavy)
 neigh = {p: {p} for p in positions}
 for p, q in itertools.combinations(positions, 2):
-    if np.sqrt(((heavy[p][:, None] - heavy[q][None]) ** 2).sum(-1)).min() <= DIST:
+    if np.linalg.norm(heavy[p] - heavy[q]) <= DIST:
         neigh[p].add(q); neigh[q].add(p)
 agg_score = {p: round(sum(ala_ddg[m] for m in neigh[p]), 3) for p in positions}
 hp = [p for p in positions if is_hot[p]]

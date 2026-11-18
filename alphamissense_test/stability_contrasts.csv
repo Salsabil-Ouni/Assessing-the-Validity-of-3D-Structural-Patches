@@ -1,11 +1,11 @@
 descriptor_version,contrast,delta_LOO_spearman,ci_low,ci_high
-residue-mean AM (primary),PRIMARY 1: (AM + patch) vs AM,0.017,-0.142,0.2
-residue-mean AM (primary),PRIMARY 2: (RSA + AM + patch) vs (RSA + AM),-0.045,-0.109,0.0
+residue-mean AM (primary),PRIMARY 1: (AM + patch) vs AM,-0.053,-0.136,0.001
+residue-mean AM (primary),PRIMARY 2: (RSA + AM + patch) vs (RSA + AM),0.014,-0.091,0.122
 residue-mean AM (primary),Secondary: (RSA + AM) vs RSA,0.071,-0.037,0.191
-residue-mean AM (primary),Secondary: (patch + AM) vs patch,0.12,-0.039,0.277
-residue-mean AM (primary),Secondary: (own + patch + AM) vs (own + AM),-0.026,-0.076,0.009
-substitution-matched AM (secondary),PRIMARY 1: (AM + patch) vs AM,0.079,-0.046,0.223
-substitution-matched AM (secondary),PRIMARY 2: (RSA + AM + patch) vs (RSA + AM),0.002,-0.039,0.046
+residue-mean AM (primary),Secondary: (patch + AM) vs patch,0.428,0.101,0.752
+residue-mean AM (primary),Secondary: (own + patch + AM) vs (own + AM),0.01,-0.043,0.064
+substitution-matched AM (secondary),PRIMARY 1: (AM + patch) vs AM,-0.031,-0.12,0.017
+substitution-matched AM (secondary),PRIMARY 2: (RSA + AM + patch) vs (RSA + AM),0.029,-0.053,0.107
 substitution-matched AM (secondary),Secondary: (RSA + AM) vs RSA,0.206,-0.049,0.494
-substitution-matched AM (secondary),Secondary: (patch + AM) vs patch,0.257,-0.003,0.528
-substitution-matched AM (secondary),Secondary: (own + patch + AM) vs (own + AM),-0.011,-0.046,0.019
+substitution-matched AM (secondary),Secondary: (patch + AM) vs patch,0.526,0.161,0.822
+substitution-matched AM (secondary),Secondary: (own + patch + AM) vs (own + AM),-0.015,-0.068,0.046

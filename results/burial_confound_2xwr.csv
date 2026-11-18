@@ -1,0 +1,2 @@
+structure,n,collinearity_spearman_exp,collinearity_spearman_full,VIF_exp,VIF_full,Q1_unadj_OR,Q1_unadj_p,Q1_adj_OR,Q1_adj_p,Q2_unadj_coef,Q2_unadj_p,Q2_adj_coef,Q2_adj_p,n_buried,buried_Q1_OR,buried_Q1_p,buried_Q2_rho,buried_Q2_p
+2XWR,37,-0.732,-0.631,1.61,1.52,9.8,0.00303,4.76,0.16582,0.064,0.07521,-0.0283,0.44805,16,,0.25,-0.359,0.1723

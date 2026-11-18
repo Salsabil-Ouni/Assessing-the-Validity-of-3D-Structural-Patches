@@ -36,7 +36,7 @@ from Bio.PDB import PDBParser
 ROOT = Path(__file__).resolve().parents[1]
 RES = ROOT / "results"
 cfg = yaml.safe_load(open(ROOT / "config.yaml", encoding="utf-8"))
-DIST = cfg["cutoffs"]["patch_distance_angstrom"]
+DIST = 6.0  # Ca-Ca, matching the supervisor's hotspotPatches.py (primary patch definition)
 DEL_BELOW = cfg["cutoffs"]["ddg_deleterious_below"]
 BURIED_REL = 0.10  # matches buried_only.py's RSA_CUT (the "beyond burial" test used in results.tex),
                     # not config.yaml's more permissive buried_cutoff_relative=0.20
@@ -50,12 +50,11 @@ ala = pd.read_csv(RES / "ala_scan_cA.csv")
 ala_ddg = dict(zip(ala.position, ala.ddG))
 
 chain = PDBParser(QUIET=True).get_structure("p", str(PDB))[0]["A"]
-heavy = {r.id[1]: np.array([a.coord for a in r if (a.element or "").strip().upper() != "H"])
-         for r in chain if r.id[1] in ala_ddg}
+heavy = {r.id[1]: r["CA"].coord for r in chain if r.id[1] in ala_ddg and r.has_id("CA")}
 positions = sorted(heavy)
 neigh = {p: {p} for p in positions}
 for p, q in itertools.combinations(positions, 2):
-    if np.sqrt(((heavy[p][:, None] - heavy[q][None]) ** 2).sum(-1)).min() <= DIST:
+    if np.linalg.norm(heavy[p] - heavy[q]) <= DIST:
         neigh[p].add(q); neigh[q].add(p)
 
 full = pd.read_csv(RES / "residue_table_full_cA.csv")  # position, rsa, patch_score (threshold-independent)

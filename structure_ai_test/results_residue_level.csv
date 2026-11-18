@@ -1,14 +1,14 @@
 quantity,value,note
 "Spearman(AI sensitivity, burial 1-RSA)",0.475,
-"Spearman(AI sensitivity, packing patch score)",0.353,
-"  same, controlling for burial (partial Spearman)",-0.021,
-AUC: hotspot-patch residues more sensitive than others (AI sensitivity),0.845,"(n in patch 63, outside 131; p=7.3e-15)"
-  same AUC using burial (1-RSA) alone,0.828,
+"Spearman(AI sensitivity, packing patch score)",0.33,
+"  same, controlling for burial (partial Spearman)",0.063,
+AUC: hotspot-patch residues more sensitive than others (AI sensitivity),0.824,"(n in patch 57, outside 137; p=1.2e-12)"
+  same AUC using burial (1-RSA) alone,0.865,
 "Giacomelli 2018: Spearman(AI sensitivity, residue-mean damage)",0.497,(n=175)
 Giacomelli 2018:   controlling for burial,0.279,
 "Giacomelli 2018: Spearman(burial 1-RSA, residue-mean damage), for comparison",0.677,
-"Giacomelli 2018: Spearman(packing patch score, residue-mean damage), for comparison",0.637,
+"Giacomelli 2018: Spearman(packing patch score, residue-mean damage), for comparison",0.519,
 "Kato 2003: Spearman(AI sensitivity, residue-mean damage)",0.472,(n=194)
 Kato 2003:   controlling for burial,0.29,
 "Kato 2003: Spearman(burial 1-RSA, residue-mean damage), for comparison",0.541,
-"Kato 2003: Spearman(packing patch score, residue-mean damage), for comparison",0.41,
+"Kato 2003: Spearman(packing patch score, residue-mean damage), for comparison",0.393,

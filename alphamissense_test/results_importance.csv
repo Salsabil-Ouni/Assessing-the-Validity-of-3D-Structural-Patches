@@ -1,13 +1,13 @@
 assay,feature_block,spearman_drop
-Giacomelli 2018,AlphaMissense score,0.2666
-Giacomelli 2018,ESM-2 zero-shot score,0.0447
-Giacomelli 2018,amino-acid chemistry,0.0438
-Giacomelli 2018,burial (RSA),0.0284
-Giacomelli 2018,own alanine-scan value,0.0136
-Giacomelli 2018,patch score,0.0232
-Kato 2003,AlphaMissense score,0.4354
-Kato 2003,ESM-2 zero-shot score,0.0602
-Kato 2003,amino-acid chemistry,0.0264
-Kato 2003,burial (RSA),0.0184
-Kato 2003,own alanine-scan value,0.016
-Kato 2003,patch score,0.0189
+Giacomelli 2018,AlphaMissense score,0.2672
+Giacomelli 2018,ESM-2 zero-shot score,0.0386
+Giacomelli 2018,amino-acid chemistry,0.0424
+Giacomelli 2018,burial (RSA),0.0439
+Giacomelli 2018,own alanine-scan value,0.0186
+Giacomelli 2018,patch score,0.0026
+Kato 2003,AlphaMissense score,0.4387
+Kato 2003,ESM-2 zero-shot score,0.0548
+Kato 2003,amino-acid chemistry,0.0244
+Kato 2003,burial (RSA),0.0225
+Kato 2003,own alanine-scan value,0.0112
+Kato 2003,patch score,0.0144

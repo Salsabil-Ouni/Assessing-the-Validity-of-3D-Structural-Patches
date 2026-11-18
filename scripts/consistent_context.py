@@ -21,7 +21,11 @@ from Bio.PDB import PDBParser, PDBIO, Select
 
 ROOT = Path(__file__).resolve().parents[1]
 cfg = yaml.safe_load(open(ROOT / "config.yaml", encoding="utf-8"))
-HOT, DIST = cfg["cutoffs"]["ala_hotspot_ddg"], cfg["cutoffs"]["patch_distance_angstrom"]
+HOT = cfg["cutoffs"]["ala_hotspot_ddg"]
+# Patch neighbour definition: Ca-Ca distance <= 6 Angstrom, matching the supervisor's
+# hotspotPatches.py. This supersedes config.yaml's patch_distance_angstrom (8.0 A,
+# closest-heavy-atom), adopted as the primary patch definition going forward.
+DIST = 6.0
 DEL_BELOW, BURIED_REL = cfg["cutoffs"]["ddg_deleterious_below"], cfg["sasa"]["buried_cutoff_relative"]
 RES = ROOT / "results"
 PDB = ROOT / "structure" / "tp53_chainA_zinc.pdb"
@@ -41,14 +45,13 @@ pd.DataFrame({"position": list(ala_ddg), "residue": [wt1[p] for p in ala_ddg],
               "ddG": [ala_ddg[p] for p in ala_ddg]}).to_csv(RES / "ala_scan_cA.csv", index=False)
 is_hot = {p: d >= HOT for p, d in ala_ddg.items()}
 
-# ---- geometry on chain A --------------------------------------------------
+# ---- geometry on chain A (Ca-Ca distance) ---------------------------------
 chain = PDBParser(QUIET=True).get_structure("p", str(PDB))[0]["A"]
-heavy = {r.id[1]: np.array([a.coord for a in r if (a.element or "").strip().upper() != "H"])
-         for r in chain if r.id[1] in ala_ddg}
-positions = sorted(heavy)
+ca = {r.id[1]: r["CA"].coord for r in chain if r.id[1] in ala_ddg and r.has_id("CA")}
+positions = sorted(ca)
 neigh = {p: {p} for p in positions}
 for p, q in itertools.combinations(positions, 2):
-    if np.sqrt(((heavy[p][:, None] - heavy[q][None]) ** 2).sum(-1)).min() <= DIST:
+    if np.linalg.norm(ca[p] - ca[q]) <= DIST:
         neigh[p].add(q); neigh[q].add(p)
 agg_score = {p: round(sum(ala_ddg[m] for m in neigh[p]), 3) for p in positions}
 hp = [p for p in positions if is_hot[p]]

@@ -2,12 +2,12 @@ assay,features,oof_spearman,oof_R2,n_rows,n_residues
 Giacomelli 2018,F1 substitution only,0.5803,0.3539,3325,175
 Giacomelli 2018,F2 + burial,0.6132,0.3924,3325,175
 Giacomelli 2018,F3 + burial + own value,0.6197,0.4031,3325,175
-Giacomelli 2018,F4 + burial + patch,0.62,0.4009,3325,175
-Giacomelli 2018,F5 + burial + own + patch,0.6262,0.4136,3325,175
-Giacomelli 2018,F6 + patch only,0.6119,0.3883,3325,175
+Giacomelli 2018,F4 + burial + patch,0.5969,0.3772,3325,175
+Giacomelli 2018,F5 + burial + own + patch,0.6144,0.4003,3325,175
+Giacomelli 2018,F6 + patch only,0.5703,0.3404,3325,175
 Kato 2003,F1 substitution only,0.5882,0.353,1147,194
 Kato 2003,F2 + burial,0.6414,0.4111,1147,194
 Kato 2003,F3 + burial + own value,0.6363,0.4068,1147,194
-Kato 2003,F4 + burial + patch,0.638,0.4073,1147,194
-Kato 2003,F5 + burial + own + patch,0.6474,0.4221,1147,194
-Kato 2003,F6 + patch only,0.6137,0.3771,1147,194
+Kato 2003,F4 + burial + patch,0.6452,0.4149,1147,194
+Kato 2003,F5 + burial + own + patch,0.6529,0.4263,1147,194
+Kato 2003,F6 + patch only,0.6111,0.3711,1147,194

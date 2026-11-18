@@ -1,0 +1,2 @@
+structure,n,n_hotspots,n_patches_ge2,Q1_OR,Q1_CI_low,Q1_CI_high,Q1_p,Q2_rho,Q2_p,cross_structure_ala_ddg_rho,cross_structure_ala_ddg_p,n_wt_mismatches
+2XWR,37,70,6,9.09,1.79,58.82,0.00292,0.382,0.01957,0.916,0.0,0

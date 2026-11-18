@@ -24,7 +24,11 @@ ROOT = Path(__file__).resolve().parents[1]
 cfg = yaml.safe_load(open(ROOT / "config.yaml", encoding="utf-8"))
 CHAIN   = cfg["structure"]["chain"]
 CUTOFF  = cfg["cutoffs"]["ala_hotspot_ddg"]
-DIST    = cfg["cutoffs"]["patch_distance_angstrom"]
+# Patch neighbour definition for THIS script only: Ca-Ca distance <= 6 Angstrom,
+# matching the supervisor's hotspotPatches.py. This intentionally overrides
+# config.yaml's patch_distance_angstrom (8.0 A, closest-heavy-atom), which other
+# scripts still use for the microenvironment score and is left untouched.
+DIST    = 6.0
 PDB     = ROOT / cfg["structure"]["repaired_pdb"]
 
 ala = pd.read_csv(ROOT / "results" / "ala_scan.csv")
@@ -34,20 +38,18 @@ ddg_of = dict(zip(hot["position"], hot["ddG"]))
 print(f"Hotspot cutoff: ddG >= {CUTOFF}  ->  {len(hot_positions)} hotspot residues")
 print(f"Neighbour distance: closest heavy atoms within {DIST} Angstrom")
 
-# ---- gather heavy-atom coordinates per hotspot residue (chain A) ----------
+# ---- gather Ca coordinates per hotspot residue (chain A) ------------------
 chain = PDBParser(QUIET=True).get_structure("p", str(PDB))[0][CHAIN]
-heavy = {}   # position -> Nx3 array of heavy-atom coords
+ca_coord = {}   # position -> Ca coordinate
 for res in chain:
     pos = res.id[1]
-    if pos in hot_positions:
-        coords = [a.coord for a in res if (a.element or "").strip().upper() != "H"]
-        if coords:
-            heavy[pos] = np.array(coords)
+    if pos in hot_positions and res.has_id("CA"):
+        ca_coord[pos] = res["CA"].coord
+heavy = ca_coord
 
 def min_dist(p, q):
-    a, b = heavy[p], heavy[q]
-    # smallest distance between any heavy atom of p and any heavy atom of q
-    return np.sqrt(((a[:, None, :] - b[None, :, :]) ** 2).sum(-1)).min()
+    # Ca-Ca distance, matching the supervisor's hotspotPatches.py
+    return float(np.linalg.norm(ca_coord[p] - ca_coord[q]))
 
 # ---- build neighbour graph -------------------------------------------------
 G = nx.Graph()

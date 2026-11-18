@@ -2,6 +2,6 @@ descriptor,spearman_with_abs_ddG,p,n
 AlphaMissense (residue mean),0.622,0.0,37
 burial (1 - RSA),0.618,0.0,37
 own alanine-scan value,0.552,0.0004,37
-patch score,0.507,0.0013,37
+patch score,0.323,0.0514,37
 AM residue mean vs burial (RSA) (194 residues),-0.5,,194
-AM residue mean vs patch score (194 residues),0.357,,194
+AM residue mean vs patch score (194 residues),0.351,,194

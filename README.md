@@ -4,22 +4,39 @@ Code for testing whether the structural impact of a TP53 missense variant is det
 3D microenvironment (hotspot patch) it belongs to, using the p53 DNA-binding domain
 (residues 93-290).
 
-- **Q1 (enrichment):** are destabilising variants over-represented in hotspot patches?
-- **Q2 (intensity):** does variant impact scale with the aggregated 3D-patch score of its microenvironment?
+- **Primary test (enrichment):** are destabilising variants over-represented in hotspot patches?
+- A continuous "intensity" test (does impact scale with an aggregated 3D-patch score) was tried
+  but dropped from the primary analysis: the score is an unnormalised sum that conflates hotspot
+  strength with neighbourhood size. It is kept only for the functional-replication and
+  pretrained-embedding comparisons below, where a continuous outcome is the natural one.
 
 Experimental (variant) and structural (patch) branches are built independently and joined only at
-the statistics stage. All cut-offs live in `config.yaml`.
+the statistics stage. All cut-offs live in `config.yaml`, except the patch neighbour distance,
+which is overridden locally in each script (see note below).
+
+## Patch definition
+
+Patches are built on **C-alpha to C-alpha distance, <= 6 Angstrom** (matching the supervisor's
+`hotspotPatches.py`), not the closest-heavy-atom, 8 Angstrom definition `config.yaml` still lists
+(`cutoffs.patch_distance_angstrom`), which an earlier version of this pipeline used and which
+collapses almost the entire hotspot set into one uninformative 63-residue patch. The 6 Angstrom
+Ca-Ca definition is hardcoded (with a comment) in each script that builds patches
+(`build_patches.py`, `consistent_context.py`, `hotspot_threshold_sweep.py`,
+`second_structure_validation.py`) rather than changed in `config.yaml`, since other, not-yet-updated
+scripts in this repo (`prof_pipeline.py`, `merge_and_test.py`, `extended_analysis.py`,
+`distance_sweep.py`, and others not listed under "Sensitivity and confounders" below) still read
+the old 8 Angstrom value and have not been re-verified under the new definition.
 
 ## Headline results
 
 | Test | Result |
 |---|---|
-| Q1, destabilising variants in hotspot patches | Fisher OR 8.0, 95% CI [1.5, 59], p = 0.007 |
-| Q2, impact vs patch score | Spearman rho = 0.51, p = 0.001 |
-| Functional-assay replication | rho = 0.64 and 0.41 across two assays, both p < 1e-8 |
+| Enrichment, destabilising variants in hotspot patches | Fisher OR 8.0, 95% CI [1.5, 59], p = 0.007 |
+| Enrichment, independent structure (2XWR) | Fisher OR 9.1, 95% CI [1.8, 59], p = 0.003 |
+| Functional-assay replication (intensity, secondary) | rho = 0.52 and 0.39 across two assays, both p < 1e-7 |
 | After adjusting for solvent burial | patch signal does not survive in the stability data |
 
-Patch score tracks solvent burial (patch score vs RSA, rho about -0.8). Result tables are in
+Patch score tracks solvent burial (patch score vs RSA, rho about -0.6 to -0.7). Result tables are in
 `results/`, `functional_ext/results/` and the per-analysis folders below.
 
 ## Pipeline
@@ -33,11 +50,14 @@ Two roads that meet at the merge step. Each script's docstring states its step.
 - `scripts/inspect_structure.py`: structure checks (chain, zinc ion)
 - `scripts/run_alascan*.sh`, `scripts/run_posscan_full.sh`: FoldX alanine scan and PositionScan (via WSL)
 - `scripts/build_ala_scan.py`: tidy alanine-scan output
-- `scripts/build_patches.py`: group hotspot residues into 3D patches (8 A neighbour graph)
+- `scripts/build_patches.py`: group hotspot residues into 3D patches (6 A Ca-Ca neighbour graph;
+  see "Patch definition" above)
 
 **Merge and test**
 - `scripts/check_numbering.py`: confirm experiment and structure use the same residue numbering
-- `scripts/merge_and_test.py`: Q1 and Q2 statistics
+- `scripts/consistent_context.py`: the current, authoritative enrichment statistics (replaces
+  `merge_and_test.py` and `prof_pipeline*.py`, which are kept for history but use the older
+  8 A heavy-atom patch definition and have not been re-verified against it)
 
 **Sensitivity and confounders** (`scripts/`)
 - `sensitivity_cutoff.py`, `distance_sweep.py`, `hotspot_threshold_sweep.py`, `representative_sensitivity.py`
@@ -84,7 +104,7 @@ chain A file in `structure/` (2OCJ, 2XWR, 1TUP from the RCSB PDB).
 3. Road B: run `scripts/inspect_structure.py`, then the FoldX alanine scan and PositionScan
    shell scripts, then `scripts/build_ala_scan.py` and `scripts/build_patches.py`.
 4. Run `scripts/check_numbering.py` to confirm the two roads share a numbering scheme, then
-   `scripts/merge_and_test.py` for the Q1/Q2 statistics reported in the thesis.
+   `scripts/consistent_context.py` for the enrichment statistics reported in the thesis.
 5. The sensitivity, confounder, second-structure, replication, and exploratory ML/AI scripts
    under `scripts/`, `functional_ext/`, `core_robustness_checks/`, `alphamissense_test/`,
    `variant_ml/`, `structure_ai_test/`, and `interface_patch_test/` can each be run independently

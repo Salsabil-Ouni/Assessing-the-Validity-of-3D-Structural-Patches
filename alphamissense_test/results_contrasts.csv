@@ -1,9 +1,9 @@
 assay,contrast,delta_spearman,ci_low,ci_high
-Giacomelli 2018,PRIMARY 1: G5 vs G3 (patch added to S+AM+burial+own),0.01,-0.0042,0.0239
-Giacomelli 2018,PRIMARY 2: G4 vs G2 (patch added to S+AM+burial),0.0051,-0.0112,0.0212
+Giacomelli 2018,PRIMARY 1: G5 vs G3 (patch added to S+AM+burial+own),-0.0046,-0.0156,0.006
+Giacomelli 2018,PRIMARY 2: G4 vs G2 (patch added to S+AM+burial),-0.0091,-0.0218,0.0021
 Giacomelli 2018,Secondary: G2 vs F2 (AlphaMissense added to S+burial),0.0366,0.0116,0.061
 Giacomelli 2018,Secondary: G3 vs F3 (AlphaMissense added to S+burial+own),0.0283,0.0027,0.0531
-Kato 2003,PRIMARY 1: G5 vs G3 (patch added to S+AM+burial+own),0.0066,-0.005,0.0176
-Kato 2003,PRIMARY 2: G4 vs G2 (patch added to S+AM+burial),-0.0005,-0.0107,0.0107
+Kato 2003,PRIMARY 1: G5 vs G3 (patch added to S+AM+burial+own),0.0051,-0.0061,0.0163
+Kato 2003,PRIMARY 2: G4 vs G2 (patch added to S+AM+burial),0.002,-0.0092,0.0137
 Kato 2003,Secondary: G2 vs F2 (AlphaMissense added to S+burial),0.0779,0.045,0.1129
 Kato 2003,Secondary: G3 vs F3 (AlphaMissense added to S+burial+own),0.0816,0.0482,0.1154
